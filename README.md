@@ -51,6 +51,7 @@ NODE_TLS_REJECT_UNAUTHORIZED=0 bend claims.bend --publish
 ```python
 import Base
 import 0x5aa4baca6ab29461acfb0fd1dc5ebd4d/types.bend as Types
+import 0x22403a77ee8da085cf4e1458c693703c/claims.bend as Claims
 import 0xc383c1b95391d033028a0003fad190e5/jwt.bend as JWT
 import 0x184803968dae9580005e472b803ca2f1/auth.bend as Auth
 import 0xac19a5c9b4cef01e72dcbe9e5b881fc7/cachet.bend as Cachet
