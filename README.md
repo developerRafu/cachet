@@ -28,29 +28,32 @@ make example
 
 ## Bend Hub
 
-Publish:
+Published on [hub.bend-lang.com](https://hub.bend-lang.com):
+
+```python
+import 0xac19a5c9b4cef01e72dcbe9e5b881fc7/cachet.bend as Cachet
+import 0x5aa4baca6ab29461acfb0fd1dc5ebd4d/types.bend as Types
+import 0x22403a77ee8da085cf4e1458c693703c/claims.bend as Claims
+import 0xc383c1b95391d033028a0003fad190e5/jwt.bend as JWT
+import 0x184803968dae9580005e472b803ca2f1/auth.bend as Auth
+```
+
+Republish after changes:
 
 ```bash
 make publish
-```
-
-Import in your project:
-
-```python
-import 0x<hash>/cachet.bend as Cachet
-import 0x<hash>/claims.bend as Claims
-import 0x<hash>/jwt.bend as JWT
-import 0x<hash>/auth.bend as Auth
+NODE_TLS_REJECT_UNAUTHORIZED=0 bend types.bend --publish
+NODE_TLS_REJECT_UNAUTHORIZED=0 bend claims.bend --publish
 ```
 
 ## Usage
 
 ```python
 import Base
-import 0x<hash>/types.bend as Types
-import 0x<hash>/jwt.bend as JWT
-import 0x<hash>/auth.bend as Auth
-import 0x<hash>/cachet.bend as Cachet
+import 0x5aa4baca6ab29461acfb0fd1dc5ebd4d/types.bend as Types
+import 0xc383c1b95391d033028a0003fad190e5/jwt.bend as JWT
+import 0x184803968dae9580005e472b803ca2f1/auth.bend as Auth
+import 0xac19a5c9b4cef01e72dcbe9e5b881fc7/cachet.bend as Cachet
 
 def main() -> IO(Unit):
   do IO<Unit>:
