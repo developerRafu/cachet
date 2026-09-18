@@ -1,0 +1,22 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Bend
+        run: curl -fsSL https://bend-lang.com/install.sh | sh
+      - name: Install OpenSSL
+        run: brew install openssl@3
+      - name: Proof gate
+        run: make proof
+      - name: Typecheck and emit C
+        run: make check
+      - name: Build native example
+        run: make build/sign_verify
